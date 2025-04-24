@@ -1,22 +1,20 @@
-//clasificacion de numeros pares e impares
-//en un bucle infinito, el usuario debe ingresar numeros enteros
-//por cada numero ingresada el programa debe determinar si es par e impar usando una funcion 
-// programa finaliza cuando el usuario ingresa -1.
+//Ejercicio 1: Clasi cación de números pares e impares
+//En un bucle in nito, el usuario debe ingresar números enteros.
+//Por cada número ingresado, el programa debe determinar si es par o impar usando una función.
+//El programa naliza cuando el usuario ingresa -1.
 #include <stdio.h>
+#include "funciones.h"
 #define   MSJ1   "ingrese el numero: numero\n"
-int main(void){
+int main(){
     int num;
-    printf(MSJ1);
-    scanf("%d", &num);
-    while (num != -1){
-        if (num % 2 == 0){
-            printf("par\n");
-        }else{
-            printf("impar\n");
-        }
+    while(1){
         printf(MSJ1);
         scanf("%d", &num);
+        if(num == -1){
+            break;
+        }
+        int clas = clasificationParImpar(num);
     }
-
+    printf("Gracias por usar el programa\n");
+    return 0;
 }
- 
