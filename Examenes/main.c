@@ -32,7 +32,7 @@ int main() {
                 break;
             case FACTORIAL:
                 printf("Ingrese un número:\n");
-                scanf("%d ", &num1);
+                scanf("%d",&num1);
                 if(num1 <= 0){
                     break;
                 }
