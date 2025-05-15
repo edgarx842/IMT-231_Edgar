@@ -1,5 +1,73 @@
 /* main.css - Estilos personalizados para VitaX */
-
+.main-header {
+    background-color: var(--background-blue);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+  
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #264e70;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.9rem;
+    color: #264e70;
+    margin: 0;
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #264e70;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #1a365e;
+  }
+  
 :root {
     --primary-color: #3a85b3;
     --secondary-color: #35a0cd;
