@@ -1,14 +1,53 @@
-/* main.css - Estilos personalizados para VitaX */
-.main-header {
+/* ========== VARIABLES GLOBALES ========== */
+:root {
+    /* Colores */
+    --primary-color: #3a85b3;
+    --secondary-color: #35a0cd;
+    --accent-color: #8cdcf7;
+    --dark-blue: #264e70;
+    --light-blue: #d4f1ff;
+    --background-blue: #a1d6e7;
+  
+    /* Tipografías */
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+  
+    /* Espaciado */
+    --spacing-xs: 6px;
+    --spacing-sm: 10px;
+    --spacing-md: 16px;
+    --spacing-lg: 30px;
+  
+    /* Breakpoints */
+    --breakpoint-sm: 768px;
+  }
+  
+  /* ========== RESET Y BASE ========== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #1a1a1a;
+  }
+  
+  /* ========== HEADER / NAVBAR ========== */
+  .main-header {
     background-color: var(--background-blue);
-    padding: 10px 0;
+    padding: var(--spacing-sm) 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   
   .header-wrapper {
     max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
+    padding: 0 var(--spacing-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,8 +61,8 @@
   
   .logo-img img {
     width: 60px;
-    height: 60px;
-    margin-right: 15px;
+    height: auto;
+    margin-right: var(--spacing-sm);
   }
   
   .logo-text-group {
@@ -32,35 +71,34 @@
   }
   
   .logo-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-title);
     font-weight: 700;
-    color: #264e70;
+    color: var(--dark-blue);
     font-size: 1.8rem;
     margin: 0;
   }
   
   .logo-subtitle {
     font-size: 0.9rem;
-    color: #264e70;
+    color: var(--dark-blue);
     margin: 0;
   }
   
-  
   .main-nav {
     display: flex;
-    gap: 15px;
+    gap: var(--spacing-md);
     flex-wrap: wrap;
   }
   
   .nav-link {
     text-decoration: none;
-    color: #264e70;
+    color: var(--dark-blue);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9rem;
-    padding: 8px 12px;
+    padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
   }
   
   .nav-link:hover,
@@ -69,78 +107,16 @@
     color: #1a365e;
   }
   
-:root {
-    --primary-color: #3a85b3;
-    --secondary-color: #35a0cd;
-    --accent-color: #8cdcf7;
-    --dark-blue: #264e70;
-    --light-blue: #d4f1ff;
-    --background-blue: #a1d6e7;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Header / Navbar */
-.main-header {
-    background-color: var(--background-blue);
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-}
-
-.logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #264e70;
-    font-size: 1.8rem;
-    margin: 0;
-}
-
-.logo-subtitle {
-    font-size: 0.9rem;
-    color: #264e70;
-    margin: 0;
-}
-
-.nav-link {
-    color: #264e70 !important;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 0 10px;
-    padding: 10px 15px !important;
-    font-size: 0.9rem;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: #1a365e !important;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
-
-/* Hero Section */
-.hero-section {
+  /* ========== HERO SECTION ========== */
+  .hero-section {
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
     padding: 80px 0;
     color: white;
     position: relative;
     overflow: hidden;
-}
-
-.hero-section::before {
+  }
+  
+  .hero-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -152,145 +128,158 @@ body {
     background-position: center;
     opacity: 0.3;
     z-index: 1;
-}
-
-.hero-content {
+  }
+  
+  .hero-content {
     position: relative;
     z-index: 2;
-}
-
-.hero-title {
-    font-family: 'Montserrat', sans-serif;
+    padding: 0 var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    font-family: var(--font-title);
     font-weight: 700;
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
-}
-
-/* Main Content */
-.content-container {
+  }
+  
+  /* ========== MAIN CONTENT ========== */
+  .content-container {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 30px;
-}
-
-.section-title {
-    font-family: 'Montserrat', sans-serif;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) auto;
+    max-width: 1000px;
+  }
+  
+  .section-title {
+    font-family: var(--font-title);
     font-weight: 700;
     color: var(--dark-blue);
     margin-bottom: 1.5rem;
-}
-
-.info-card {
+  }
+  
+  /* ========== INFO CARDS ========== */
+  .info-card {
     display: flex;
     align-items: flex-start;
     margin-bottom: 2rem;
     background-color: #f9f9f9;
     border-radius: 8px;
     overflow: hidden;
-}
-
-.info-card-reverse {
+    flex-wrap: wrap;
+  }
+  
+  .info-card--reverse {
     flex-direction: row-reverse;
-}
-
-.info-text {
-    padding: 20px;
+  }
+  
+  .info-text {
+    padding: var(--spacing-md);
     flex: 1;
-}
-
-.info-image {
+  }
+  
+  .info-image {
     width: 200px;
     min-height: 150px;
     background-color: var(--light-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.info-title {
-    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .info-title {
+    font-family: var(--font-title);
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--dark-blue);
-}
-
-.info-subtitle {
+  }
+  
+  .info-subtitle {
     font-style: italic;
     margin-bottom: 1rem;
     color: #666;
-}
-
-.transmission-list {
+  }
+  
+  .transmission-list {
     padding-left: 20px;
-}
-
-.transmission-list li {
+  }
+  
+  .transmission-list li {
     margin-bottom: 0.5rem;
-}
-
-/* Cards */
-.card {
+  }
+  
+  /* ========== CARD ESTILO GENERAL ========== */
+  .card {
     border: none;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
-}
-
-.card:hover {
+  }
+  
+  .card:hover {
     transform: translateY(-5px);
-}
-
-.card-header {
+  }
+  
+  .card-header {
     font-weight: 600;
     padding: 12px 20px;
-}
-
-/* Buttons */
-.btn-primary {
+  }
+  
+  /* ========== BOTONES ========== */
+  .btn-primary {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
     border: none;
     padding: 8px 20px;
     border-radius: 5px;
     transition: all 0.3s;
-}
-
-.btn-primary:hover {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn-primary:hover {
     background: linear-gradient(135deg, var(--dark-blue) 0%, #1a3a6d 100%);
     transform: translateY(-2px);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+  }
+  
+  /* ========== RESPONSIVE DESIGN ========== */
+  @media (max-width: var(--breakpoint-sm)) {
     .main-nav {
-        margin-top: 15px;
+      margin-top: var(--spacing-sm);
     }
-    
-    .info-card {
-        flex-direction: column;
+  
+    .info-card,
+    .info-card--reverse {
+      flex-direction: column;
     }
-    
-    .info-card-reverse {
-        flex-direction: column;
-    }
-    
+  
     .info-image {
-        width: 100%;
-        height: 120px;
+      width: 100%;
+      height: 120px;
     }
-    
+  
     .hero-section {
-        padding: 40px 0;
+      padding: 40px 0;
     }
-}
-
-/* Footer */
-.main-footer {
+  
+    .header-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  /* ========== FOOTER ========== */
+  .main-footer {
     background-color: var(--dark-blue);
     color: white;
-    padding: 20px 0;
+    padding: var(--spacing-md) 0;
     text-align: center;
-}
+  }
+  
