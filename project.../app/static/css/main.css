@@ -727,30 +727,13 @@
 /*estilos para el encabezado de recuros*/
 
 /*======== Recomendaciones section ========*/
-.recomendaciones-header{
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-  margin-bottom: 1rem;
-  height: 100px;                /* Más pequeño que hero-section */
-  background-color: white;     /* Fondo blanco */
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra sutil */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.5rem 2.5rem;
-}
-.recommendaciones-header h1 {
-  font-size: 1.8rem;
-  color: #264e70;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-}
-.recommendaciones-header p {
+
+.intro-text {
   font-size: 1rem;
-  color: #000000;
-  margin-top: 0.5rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
 }
 
 .recommendation-card {
@@ -760,7 +743,6 @@
   margin: 0 auto 1rem auto;  /* centra y da espacio inferior */
   border-radius: 5px;       /* igual que el header */
   padding: 1.5rem 2.5rem;    /* igual que el header */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
