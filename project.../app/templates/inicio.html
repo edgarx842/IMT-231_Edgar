@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<!-- agrega las fuentes que quiera -->
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -5,6 +8,9 @@
 <section class="hero-section">
   <div class="hero-content">
     <h2 class="hero-title">¿Quiénes somos?</h2>
+    <p class="hero-description">
+      En <strong>VitaX</strong>, acercamos a las personas a centros de salud donde pueden acceder a pruebas, tratamiento y orientación sobre VIH, SIDA y VPH, promoviendo el cuidado y la prevención con información confiable.
+    </p>
   </div>
 </section>
 
@@ -27,27 +33,29 @@
       </ul>
     </div>
     <div class="info-image">
-      <img src="{{ url_for('static', filename='img/vih.png') }}" alt="VIH" class="icon-image">
+      <img src="{{ url_for('static', filename='img/vih.jpg.webp') }}" alt="VIH" class="icon-image">
     </div>
   </div>
 
-  <!-- SIDA Section -->
-  <div class="info-card info-card-reverse">
-    <div class="info-text">
-      <h2 class="info-title">SIDA</h2>
-      <p>El Síndrome de Inmunodeficiencia Adquirida (SIDA) es la etapa avanzada de la infección por VIH cuando el sistema inmunitario está gravemente dañado.</p>
-      <p><strong>Síntomas comunes:</strong></p>
-      <ul class="transmission-list">
-        <li>Pérdida rápida de peso</li>
-        <li>Fiebre recurrente</li>
-        <li>Fatiga extrema</li>
-        <li>Infecciones oportunistas</li>
-      </ul>
-    </div>
-    <div class="info-image">
-      <img src="{{ url_for('static', filename='img/sida.png') }}" alt="SIDA" class="icon-image">
-    </div>
+<!-- SIDA Section -->
+<div class="info-card info-card-reverse">
+  <div class="info-image">
+    <img src="{{ url_for('static', filename='img/sida.jpeg') }}" alt="SIDA" class="icon-image">
   </div>
+  <div class="info-text">
+    <h2 class="info-title">SIDA</h2>
+    <p>
+      El Síndrome de Inmunodeficiencia Adquirida (SIDA) es la etapa avanzada de la infección por VIH cuando el sistema inmunitario está gravemente dañado.
+    </p>
+    <p><strong>Síntomas comunes:</strong></p>
+    <ul class="transmission-list">
+      <li>Pérdida rápida de peso</li>
+      <li>Fiebre recurrente</li>
+      <li>Fatiga extrema</li>
+      <li>Infecciones oportunistas</li>
+    </ul>
+  </div>
+</div>
 
   <!-- VPH Section -->
   <div class="info-card">
@@ -62,7 +70,7 @@
       </ul>
     </div>
     <div class="info-image">
-      <img src="{{ url_for('static', filename='img/vph.png') }}" alt="VPH" class="icon-image">
+      <img src="{{ url_for('static', filename='img/wih.webp') }}" alt="VPH" class="icon-image">
     </div>
   </div>
 </section>
@@ -81,4 +89,6 @@
     </div>
   </div>
 </section>
+
+
 {% endblock %}

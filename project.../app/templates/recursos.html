@@ -1,66 +1,388 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Recursos Informativos</h1>
-<p class="lead">Encuentra aquí material educativo, guías y recursos relacionados con el VIH, SIDA y VPH.</p>
-
-<div class="row mt-4">
-    {% for recurso in recursos %}
-    <div class="col-md-4 mb-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ recurso.titulo }}</h5>
-                <p class="card-text">{{ recurso.descripcion }}</p>
-                <a href="{{ recurso.enlace }}" class="btn btn-primary">Ver recurso</a>
+<div class="resources-container">
+    <!-- Sección de encabezado -->
+    <div class="resources-header text-center py-5">
+        <h1 class="display-4 font-weight-bold text-primary">Recursos informativos</h1>
+        <p class="lead">Encuentra aquí material educativo, guías y recursos relacionados con el VIH, SIDA y VPH</p>
+        <div class="header-divider"></div>
+    </div>
+    <!-- Sección de Hospitales y Clínicas -->
+    <section class="hospital-section my-5">
+        <div class="section-header d-flex align-items-center mb-4">
+            <div class="icon-box bg-info mr-3">
+                <i class="fas fa-hospital text-white"></i>
+            </div>
+            <h2 class="mb-0">Hospitales y Clínicas</h2>
+        </div>
+        <p class="section-description">Centros de atención donde puedes realizarte pruebas de VIH, vacunación contra VPH y recibir tratamiento</p>
+        
+        <div class="hospital-grid mt-4">
+            <!-- Hospital 1 -->
+            <div class="hospital-card">
+                <div class="hospital-badge">Recomendado</div>
+                <h3>SEDES, Servicio Departamental de Salud</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Pruebas VIH </span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Diagnósticos medicos</span>
+                    <span class="service-badge"><i class="fas fa-user-md"></i> Tratamientos</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i>  Avenida Potosi, Tarija</p>
+                    <p><i class="far fa-clock"></i> Lunes a Viernes: 7:00 am-13:00pm </p>
+                    <p><i class="fas fa-phone"></i> Tel: 4 6665074</p>
+                </div>
+                <a href="https://maps.app.goo.gl/bGdUk3P7dqPAjZy37" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+            <!-- Centro medico cies  -->
+            <div class="hospital-card">
+                <div class="hospital-badge">Atención 24h</div>
+                <h3>CIES- Salud sexual y Reproductiva</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Vacuna VPH</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> metodos anticonceptivos</span>
+                    <span class="service-badge"><i class="fas fa-procedures"></i> Emergencias</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i> calle Bolivar, entre Mendez y Santa Cruz #475, Tarija</p>
+                    <p><i class="far fa-clock"></i> Abierto las 24 horas</p>
+                    <p><i class="fas fa-phone"></i> Tel: 69830863</p>
+                </div>
+                <a href="https://maps.app.goo.gl/DRyY9Pe8QhfQiiMg6" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+             <!-- Hospital 2 -->
+             <div class="hospital-card">
+                <div class="hospital-badge">Atención 24h</div>
+                <h3>Hospital de Clínicas La Paz</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Vacuna VPH</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Test VIH</span>
+                    <span class="service-badge"><i class="fas fa-procedures"></i> Emergencias</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Saavedra #789, Miraflores, La Paz</p>
+                    <p><i class="far fa-clock"></i> Abierto las 24 horas</p>
+                    <p><i class="fas fa-phone"></i> Tel: (2) 278-3456</p>
+                </div>
+                <a href="https://goo.gl/maps/ejemplo3" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
             </div>
         </div>
-    </div>
-    {% endfor %}
-</div>
+    </section>
+    <!-- Sección Clínicas -->
+     <!-- haremos lo mismo con el mismo codigo-->
+    <section class="hospital-section my-5">
+        <div class="section-header d-flex align-items-center mb-4">
+            <div class="icon-box bg-info mr-3">
+                <i class="fas fa-hospital text-white"></i>
+            </div>
+            <h2 class="mb-0">Clínicas y Laboratorios</h2>
+        </div>
+        <p class="section-description">Centros de atención donde puedes realizarte, pruebas de VIH, vacunación contra VPH y recibir tratamiento</p>
+        
+        <div class="hospital-grid mt-4">
+            <!-- Hospital 1 -->
+            <div class="hospital-card">
+                <div class="hospital-badge">Recomendado</div>
+                <h3>Laboratorio Tarija Análisis Clínico</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Pruebas VIH, herpes</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Diagnósticos medicos</span>
+                    <span class="service-badge"><i class="fas fa-user-md"></i> Analisis</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i>  entre Corrado y Daniel Campos #165, Zona Central, Tarija</p>
+                    <p><i class="far fa-clock"></i> Lunes a Viernes: 7:30 am-12:30 am y 14:30pm-19:00pm</p>
+                    <p><i class="fas fa-phone"></i> Tel: 68690060</p>
+                </div>
+                <a href="https://maps.app.goo.gl/viaSHtofV38wDJHk6" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+            <!-- Clinica La -->
+            <div class="hospital-card">
+                <div class="hospital-badge">Emergencias las 24h</div>
+                <h3>Laboratorio de Analisis Clínico SAN LUCAS</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Analisis de ETS</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Resultados en el dia</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i>calle Cochabamba #1075 entre Aurelio Arce y Venezuela</p>
+                    <p><i class="far fa-clock"></i> Lunes a Viernes de 7:00am-12am y 15:00-18:30pm y Sabado de 7am-12am</p>
+                    <p><i class="fas fa-phone"></i> Tel: 72909420</p>
+                </div>
+                <a href="https://maps.app.goo.gl/we9nCgvLbiNBQTA6A" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+             <!-- Hospital 2 -->
+             <div class="hospital-card">
+                <div class="hospital-badge">Atención 24h</div>
+                <h3>Hospital de Clínicas La Paz</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Vacuna VPH</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Test VIH</span>
+                    <span class="service-badge"><i class="fas fa-procedures"></i> Emergencias</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Saavedra #789, Miraflores, La Paz</p>
+                    <p><i class="far fa-clock"></i> Abierto las 24 horas</p>
+                    <p><i class="fas fa-phone"></i> Tel: (2) 278-3456</p>
+                </div>
+                <a href="https://goo.gl/maps/ejemplo3" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
 
-<div class="mt-5">
-    <h2>Videos Educativos</h2>
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">¿Qué es el VIH y cómo prevenirlo?</h5>
-                    <p class="card-text">Video informativo sobre la transmisión y prevención del VIH.</p>
-                    <p class="text-muted">(Aquí se insertaría un video educativo)</p>
+        
+            <!-- Clinica 2 -->
+            <div class="hospital-card">
+                <div class="hospital-badge">Recomendado</div>
+                <h3>Laboratorio Tarija Análisis Clínico</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Pruebas VIH, herpes</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Diagnósticos medicos</span>
+                    <span class="service-badge"><i class="fas fa-user-md"></i> Analisis</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i>  entre Corrado y Daniel Campos #165, Zona Central, Tarija</p>
+                    <p><i class="far fa-clock"></i> Lunes a Viernes: 7:30 am-12:30 am y 14:30pm-19:00pm</p>
+                    <p><i class="fas fa-phone"></i> Tel: 68690060</p>
+                </div>
+                <a href="https://maps.app.goo.gl/viaSHtofV38wDJHk6" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+
+            <div class="hospital-card">
+                <h3>Centro de Salud Villa Fátima</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-vial"></i> Test VIH</span>
+                    <span class="service-badge"><i class="fas fa-user-md"></i> Consultas</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 15 de Abril #567, Villa Fátima, La Paz</p>
+                    <p><i class="far fa-clock"></i> Lunes a Sábado: 7:30 - 19:00</p>
+                    <p><i class="fas fa-phone"></i> Tel: (2) 278-8910</p>
+                </div>
+                <a href="https://goo.gl/maps/ejemplo2" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+            
+            <!-- Hospital 3 -->
+            <div class="hospital-card">
+                <div class="hospital-badge">Atención 24h</div>
+                <h3>Hospital de Clínicas La Paz</h3>
+                <div class="hospital-services">
+                    <span class="service-badge"><i class="fas fa-syringe"></i> Vacuna VPH</span>
+                    <span class="service-badge"><i class="fas fa-vial"></i> Test VIH</span>
+                    <span class="service-badge"><i class="fas fa-procedures"></i> Emergencias</span>
+                </div>
+                <div class="hospital-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Saavedra #789, Miraflores, La Paz</p>
+                    <p><i class="far fa-clock"></i> Abierto las 24 horas</p>
+                    <p><i class="fas fa-phone"></i> Tel: (2) 278-3456</p>
+                </div>
+                <a href="https://goo.gl/maps/ejemplo3" class="btn btn-hospital" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver en mapa
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Sección de prevención -->
+    <section class="prevention-section mb-5">
+        <div class="section-header d-flex align-items-center mb-4">
+            <div class="icon-box bg-primary mr-3">
+                <i class="fas fa-shield-alt text-white"></i>
+            </div>
+            <h2 class="mb-0">Enlaces y documentos con información relevante del VIH, SIDA y VPH</h2>
+        </div>
+        <p class="section-description">Herramientas disponibles para prevenir el VIH</p>
+        
+        <div class="resource-grid mt-4">
+            <!-- Recurso 1 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-file-pdf text-danger"></i>
+                </div>
+                <h3>Como prevenir el VIH</h3>
+                <p class="resource-description">Hay muchas herramientas disponibles para ayudar a prevenir el VIH</p>
+                <a href="https://www.cdc.gov/hiv/es/prevention/como-prevenir-el-vih.html" class="resource-link">Click aquí <i class="fas fa-download ml-2"></i></a>
+            </div>
+            
+            <!-- Recurso 2 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-map-marker-alt text-success"></i>
+                </div>
+                <h3>Acceso gratuito a diagnóstico y tratamiento para personas con VIH en Bolivia</h3>
+                <p class="resource-description">Centros de atención en Bolivia</p>
+                <a href="https://www.minsalud.gob.bo/8417-dia-mundial-del-sida-mas-de-18-mil-personas-que-viven-con-vih-en-bolivia-acceden-a-diagnostico-y-tratamiento-antirretroviral-gratuito" class="resource-link">Ver centros <i class="fas fa-external-link-alt ml-2"></i></a>
+            </div>
+            
+            <!-- Recurso 3 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-balance-scale text-info"></i>
+                </div>
+                <h3>VACUNA CONTRA EL VPH BOLIVIA</h3>
+                <p class="resource-description">La vacuna contra el VPH de administra a niñas de 10 años de edad.</p>
+                <a href="https://pai2.minsalud.gob.bo/ver_esquema_vph" class="resource-link">Ver documento <i class="fas fa-book-open ml-2"></i></a>
+            </div>
+            
+            <!-- Recurso 4 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-syringe text-warning"></i>
+                </div>
+                <h3>GUÍA DE TRATAMIENTO ANTIRRETROVIRAL EN ADULTOS</h3>
+                <p class="resource-description">El tratamiento consiste en una combinación de fármacos (comúnmente llamada "terapia antirretroviral de gran actividad" o TARGA)</p>
+                <a href="https://www.minsalud.gob.bo/images/Documentacion/dgss/Epidemiologia/VIH%20-SIDA/5.GUIA%20TARV%20ADULTOS.pdf" class="resource-link">Más información <i class="fas fa-chevron-right ml-2"></i></a>
+            </div>
+            <!-- Recurso 5 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-file-pdf text-danger"></i>
+                </div>
+                <h3>NORMA NACIONAL DE ATENCION INTEGRAL EN ITS/VIH/SIDA</h3>
+                <p class="resource-description">Documento completo con protocolos actualizados</p>
+                <a href="https://www.minsalud.gob.bo/7318-normas-y-manuales-programa-nacional-its-vih-sida" class="resource-link">Descargar PDF <i class="fas fa-download ml-2"></i></a>
+            </div>
+            <!-- Recurso 6 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-file-pdf text-danger"></i>
+                </div>
+                <h3>Guía de Tratamiento Antirretroviral en Adultos</h3>
+                <p class="resource-description">Documento completo con protocolos actualizados</p>
+                <a href="#" class="resource-link">Descargar PDF <i class="fas fa-download ml-2"></i></a>
+            </div>
+            
+        </div>
+    </section>
+   
+    <!-- Sección de videos -->
+    <section class="video-section py-5">
+        <div class="section-header d-flex align-items-center mb-4">
+            <div class="icon-box bg-danger mr-3">
+                <i class="fas fa-video text-white"></i>
+            </div>
+            <h2 class="mb-0">Videos Educativos</h2>
+        </div>
+        <p class="section-description">Explora nuestra colección de videos informativos sobre el VIH, SIDA y VPH</p>
+        
+        <div class="video-grid mt-4">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="{{ url_for('static', filename='images/vih-prevention-thumb.jpg') }}" alt="Prevención VIH">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <!--subtitulo-->
+                    <h3>Prevención del VIH: Métodos efectivos</h3>
+                    <p class="video-meta"><i class="far fa-clock mr-2"></i> 6:45 min</p>
+                    <a href="https://youtu.be/_tmd0j3AyE4?si=tIBN-qMu9gSEt42a" class="btn btn-video" target="_blank">
+                        Ver video <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="{{ url_for('static', filename='images/vih-treatment-thumb.jpg') }}" alt="Tratamiento VIH">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>PrEP: el tratamiento que previene el VIH</h3>
+                    <p class="video-meta"><i class="far fa-clock mr-2"></i> 5:40 min</p>
+                    <a href="https://youtu.be/cXOI6o7-z04?si=IzooxbXdXU4Uwfym" class="btn btn-video" target="_blank">
+                        Ver video <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="{{ url_for('static', filename='images/vph-info-thumb.jpg') }}" alt="Información VPH">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>VPH: Lo que necesitas saber</h3>
+                    <p class="video-meta"><i class="far fa-clock mr-2"></i> 5:15 min</p>
+                    <a href="https://youtu.be/_tmd0j3AyE4?si=tIBN-qMu9gSEt42a" class="btn btn-video" target="_blank">
+                        Ver video <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="{{ url_for('static', filename='images/vph-info-thumb.jpg') }}" alt="Información VPH">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>¿Por qué NO EXISTE la VACUNA contra el VIH/SIDA?</h3>
+                    <p class="video-meta"><i class="far fa-clock mr-2"></i> 12:59 min</p>
+                    <a href="https://youtu.be/UioIV8duu3w?si=H0IuiL4PTVvfLm3V" class="btn btn-video" target="_blank">
+                        Ver video <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <!--video 5-->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="{{ url_for('static', filename='images/prevencion.jpg') }}" alt="Información VPH">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>VPH: Lo que necesitas saber</h3>
+                    <p class="video-meta"><i class="far fa-clock mr-2"></i> 1:13 min</p>
+                    <a href="https://youtu.be/nA74zS_Ezew?si=RzkoZRqYpYM7fgN4" class="btn btn-video" target="_blank">
+                        Ver video <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Importancia de la vacuna contra el VPH</h5>
-                    <p class="card-text">Información sobre los beneficios de la vacunación contra el VPH.</p>
-                    <p class="text-muted">(Aquí se insertaría un video educativo)</p>
+    </section>
+</div>
+
+<!-- Modal para videos -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Video Educativo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="mt-5">
-    <h2>Organizaciones y Referencias</h2>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <h5>Organización Mundial de la Salud (OMS)</h5>
-            <p>Información actualizada sobre VIH, SIDA y VPH a nivel mundial.</p>
-            <a href="https://www.who.int" target="_blank" class="btn btn-sm btn-outline-primary">Visitar sitio</a>
-        </li>
-        <li class="list-group-item">
-            <h5>ONUSIDA</h5>
-            <p>Programa conjunto de las Naciones Unidas sobre el VIH/SIDA.</p>
-            <a href="https://www.unaids.org" target="_blank" class="btn btn-sm btn-outline-primary">Visitar sitio</a>
-        </li>
-        <li class="list-group-item">
-            <h5>Centros para el Control y Prevención de Enfermedades (CDC)</h5>
-            <p>Recursos educativos y guías de prevención.</p>
-            <a href="https://www.cdc.gov" target="_blank" class="btn btn-sm btn-outline-primary">Visitar sitio</a>
-        </li>
-    </ul>
 </div>
 {% endblock %}
-
