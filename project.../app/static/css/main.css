@@ -401,326 +401,329 @@
 
 
   /*recursos */
-  /*recursos*/
-/*PARTE DE HOSPITALES Y CLINICAS/*
+  /*PARTE DE HOSPITALES Y CLINICAS*/
     /* Estilos para la sección de hospitales */
-   /* General Body Styles */
-/* General Body Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  color: #050505;
+    .hospital-section {
+        background-color: #f8fafc;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .hospital-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .hospital-card {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .hospital-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .hospital-card h3 {
+        color: #2d3748;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        padding-right: 30px;
+    }
+    
+    .hospital-services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .service-badge {
+        background-color: #edf2f7;
+        color: #4a5568;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .service-badge i {
+        margin-right: 5px;
+        font-size: 0.7rem;
+    }
+    
+    .hospital-info {
+        margin: 20px 0;
+    }
+    
+    .hospital-info p {
+        color: #4a5568;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .hospital-info i {
+        margin-right: 10px;
+        color: #4299e1;
+        min-width: 16px;
+    }
+    
+    .btn-hospital {
+        background-color: #4299e1;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s;
+    }
+    
+    .btn-hospital i {
+        margin-right: 8px;
+    }
+    
+    .btn-hospital:hover {
+        background-color: #3182ce;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
+    }
+    
+    .hospital-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #48bb78;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+        .hospital-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .hospital-section {
+            padding: 20px;
+        }
+    }
 
-  background-color: #c5c4c4;
-  background-position: top center, bottom center;
-  background-size: 100% auto, 100% auto;
-  background-attachment: fixed, fixed;
-}
-
-/* ... el resto de tu CSS (sin cambios en este aspecto) ... */
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-      background-size: cover;
-      background-position: center center;
-      /* Si usas una sola imagen para móvil, la ruta también necesitará '../imagenes/' */
-      background-image: url('../imagenes/fondo-movil.png'); /* Asegúrate de tener esta imagen si la usas */
-  }
-  .cards-container {
-      grid-template-columns: 1fr;
-  }
-}
-/* Para la transparencia en el fondo de las secciones */
-/* Hacemos que el main tenga un fondo semi-transparente para ver la imagen de fondo del body */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco con 85% de opacidad (15% transparente) */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  /* Asegurarse que el contenido del main esté por encima del fondo del body */
-  position: relative;
-  z-index: 1;
-}
-
-
-/* Header Styles */
-header {
-  text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente para el header también */
-  padding-top: 10px; /* Ajuste si es necesario */
-  border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
-}
-
-header h1 {
-  color: #2f7bbd;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.1em;
-  color: #666;
-}
-
-/* Common Section Container Styling */
-.section-container {
-  margin-bottom: 50px; /* Space between sections */
-  padding-top: 20px;
-  border-top: 1px solid #eee; /* Light separator */
-}
-
-.section-container:first-of-type {
-  border-top: none; /* No top border for the very first section */
-}
-
-.section-container h2 {
-  color: #062341;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.section-container .description {
-  text-align: left;
-  margin-bottom: 30px;
-  font-size: 1em;
-  color: #555;
-}
-
-/* Cards Container Styles */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* Individual Card Styles */
-.card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.9); /* Las tarjetas también con un poco de transparencia */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-.card-header {
-  position: relative;
-  height: 150px; /* Adjust height as needed */
-  overflow: hidden;
-  background-color: #eee; /* Placeholder for background if image not loaded */
-}
-
-.card-header .background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the area */
-  display: block;
-}
-
-.card-header .overlay-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(100, 98, 98, 0.6); /* Semi-transparent black background */
-  color: white;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.card-header h3 {
-  margin: 0;
-  font-size: 1.2em;
-}
-
-.card-body {
-  padding: 15px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-body .buttons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  flex-wrap: wrap; /* Allows buttons to wrap to next line if space is limited */
-}
-
-.card-body button {
-  background-color: #59c1c9;
-  color: white;
-  border: none;
-  padding: 8px 15px; /* Aumentado el padding para que el redondeo se vea mejor */
-  border-radius: 20px; /* --- CAMBIO AQUÍ: Más redondeado --- */
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Añadida una pequeña transformación */
-}
-
-.card-body button:hover {
-  background-color: #01152b;
-  transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
-}
-
-.card-body p {
-  margin: 5px 0;
-  font-size: 0.95em;
-}
-
-/* Specific Link/Video Styles for buttons/links */
-.card-body .map-link,
-.card-body .link-guide,
-.card-body .video-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: #082544;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  align-self: flex-start; /* Align link to the start of the flex container */
-}
-
-.card-body .map-link:hover,
-.card-body .link-guide:hover,
-.card-body .video-link:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-/* Empty Card (for future content) */
-.empty-card {
-  opacity: 0.7; /* Slightly faded to indicate it's a placeholder */
-  border-style: dashed;
-}
-
-/* ... (Todo tu CSS existente ANTES de la sección .dia-vih-sida) ... */
-
-/* Estilos para la sección del Día Mundial contra el VIH/SIDA (AHORA SÍ, EL DISEÑO DEL BOCETO) */
-.dia-vih-sida {
-  background-color: rgba(255, 255, 255, 0.95); /* Fondo casi sólido */
-  padding: 30px 20px;
-  border-radius: 8px;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border: 1px solid #e7e7e7;
-  text-align: center; /* Para centrar el contenido en caso de que no haya suficiente espacio para flex */
-}
-
-.dia-content-wrapper {
-  display: flex; /* Habilitar Flexbox */
-  align-items: center; /* Alinear verticalmente al centro */
-  justify-content: center; /* Centrar el contenido horizontalmente */
-  gap: 30px; /* Espacio entre las tres áreas */
-  max-width: 1000px; /* Un ancho máximo para el contenedor interno */
-  margin: 0 auto; /* Centrar el wrapper dentro de la sección */
-  flex-wrap: wrap; /* Permitir que los elementos se envuelvan si la pantalla es muy pequeña */
-  padding: 10px; /* Pequeño padding interno */
-}
-
-.dia-image-area {
-  flex-shrink: 0;
-  /* CAMBIO: Aumenta el tamaño base y el ancho máximo del área de la imagen */
-  flex-basis: 200px; /* Por ejemplo, de 150px a 200px */
-  max-width: 200px; /* De 150px a 200px */
-  height: 200px; /* De 150px a 200px para que sea cuadrada */
-  /* FIN CAMBIO */
-
-  display: flex;
-  justify-content: center; /* Centrar horizontalmente la imagen dentro de esta área */
-  align-items: center; /* Centrar VERTICALMENTE la imagen dentro de esta área */
-  border: 1px solid #ddd;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.dia-image {
-  max-width: 100%; /* La imagen no se desbordará del nuevo tamaño del contenedor */
-  max-height: 100%;
-  object-fit: contain;
-
-}
-
-.dia-main-text-area {
-  flex-grow: 1; /* Permite que este área ocupe el espacio restante */
-  text-align: center; /* Centrar el texto dentro de este área */
-  min-width: 250px; /* Ancho mínimo para que el texto no se comprima demasiado */
-  max-width: 400px; /* Ancho máximo para el texto principal */
-}
-
-.dia-date {
-  display: block;
-  font-size: 1.2em;
-  color: #666;
-  margin-bottom: 5px;
-  font-weight: bold; /* Hacer la fecha un poco más prominente */
-}
-
-.dia-title {
-  font-size: 2.5em; /* Letra grande para el título principal */
-  color: #cc0000;
-  font-weight: bold;
-  line-height: 1.1; /* Ajustar el espaciado entre líneas */
-  margin: 0;
-  text-transform: uppercase;
-}
-
-/* Opcional: Estilos para los botones si decides incluirlos */
-.dia-vih-sida .call-to-action {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.dia-vih-sida .button-info {
-  background-color: #cc0000;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1em;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.dia-vih-sida .button-info:hover {
-  background-color: #990000;
-  transform: translateY(-2px);
-}
-
-/* Ajustes responsivos para esta sección */
-@media (max-width: 768px) {
-  .dia-content-wrapper {
-      flex-direction: column; /* Apilar los elementos en pantallas pequeñas */
-      align-items: center; /* Centrar elementos cuando están apilados */
-      gap: 15px; /* Reducir el espacio entre elementos apilados */
-  }
-  .dia-image-area {
-      margin-bottom: 10px; /* Espacio debajo de la imagen cuando está apilada */
-  }
-  .dia-main-text-area{
-      width: 100%; /* Ocupar todo el ancho disponible */
-      max-width: 90%; /* Un poco de margen en los lados */
-      text-align: center; /* Centrar todo el texto en móviles */
-  }
-  .dia-title {
-      font-size: 1.8em; /* Ajustar tamaño del título para móviles */
-  }
-}
-
-/* ... (El resto de tu CSS EXISTENTE) ... */
+    /* Estilos generales */
+    .resources-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .resources-header {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .header-divider {
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, #3498db, #2ecc71);
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+    
+    .section-header {
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e9ecef;
+    }
+    
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    .section-description {
+        color: #6c757d;
+        font-size: 1.1rem;
+    }
+    
+    /* Estilos para tarjetas de recursos */
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .resource-card {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .resource-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .resource-card h3 {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .resource-description {
+        color: #7f8c8d;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .resource-link {
+        display: inline-flex;
+        align-items: center;
+        color: #3498db;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .resource-link:hover {
+        color: #2980b9;
+        text-decoration: underline;
+    }
+    
+    /* Estilos para sección de videos */
+    .video-section {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 30px;
+    }
+    
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .video-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+    }
+    
+    .video-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .video-thumbnail {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+    }
+    
+    .video-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+    
+    .video-card:hover .video-thumbnail img {
+        transform: scale(1.05);
+    }
+    
+    .play-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2.5rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .video-card:hover .play-overlay {
+        opacity: 1;
+    }
+    
+    .video-info {
+        padding: 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+    
+    .video-meta {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .btn-video {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+    
+    .btn-video:hover {
+        background-color: #c0392b;
+        transform: translateY(-2px);
+    }
+    
+    /* Responsive lol */
+    @media (max-width: 768px) {
+        .resource-grid, .video-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .resources-header {
+            padding: 30px 20px;
+        }
+        
+        .video-thumbnail {
+            height: 150px;
+        }
+    }
 /*estilos para el encabezado de recuros*/
 
 /*======== Recomendaciones section ========*/
